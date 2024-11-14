@@ -79,12 +79,13 @@ docker build -f Dockerfile  -t shinobi_exporter .
 docker-compose up -d  
 ```
 ## nvidia-smi-exporter
-В разработке
+Мониторинг состояния видекарт посредством [nvidia-smi-exporter](https://github.com/zhebrak/nvidia_smi_exporter)  
 
 ## Examples
 Графическое отображение:  
-![img_2.png](img/img_2.png)
+![Статистика](img/img_2.png)
 Гнерация отчетов:  
-![img_1.png](img/img_1.png)
-
+![Отчеты](img/img_1.png)
+Мониторинг видеокарт:
+![Видеокарты](img/img_3.png)
 
