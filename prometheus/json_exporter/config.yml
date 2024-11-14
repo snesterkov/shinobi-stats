@@ -1,0 +1,16 @@
+modules:
+  default:
+    metrics:
+    - name: shinobi_stream
+      type: object
+      path: '{ .monitors[?(@)] }'
+      help: Shinobi stream status
+      labels:
+        environment: beta        # static label
+        name: "{.name}"          # dynamic label
+        stream: "{.stream}"
+        mid: "{.mid}"
+      values:
+        status: '{.status}'
+    headers:
+      X-Dummy: my-test-header

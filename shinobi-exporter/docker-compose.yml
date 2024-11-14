@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  shinobi_exporter:
+    container_name: shinobi_exporter
+    image: shinobi_exporter
+    build:
+      context: .
+    command:
+      - './bin/exporter'
+      - '--shinobi.endpoint=https://shinobi_api'
+      - '--shinobi.group=monitors_group_name'
+      - '--shinobi.token=token_text'
+      - '--shinobi.insecure=1'
+    restart: unless-stopped
+    ports:
+      - '9765:9765'

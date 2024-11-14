@@ -1,0 +1,11 @@
+services:
+  exp_json:
+    image: quay.io/prometheuscommunity/json-exporter
+    volumes:
+      - ./etc/json_exporter/config.yml:/config.yml:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    ports:
+      - "7979:7979"
+    command:
+      - '--config.file=/config.yml'
